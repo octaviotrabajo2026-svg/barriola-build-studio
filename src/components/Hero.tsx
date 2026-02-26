@@ -9,9 +9,9 @@ const Hero = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url(${heroBg})`,
-          filter: "grayscale(100%)",
-        }}
-      />
+          filter: "grayscale(100%)"
+        }} />
+
       <div className="absolute inset-0 bg-surface-dark/80" />
 
       {/* Content */}
@@ -20,20 +20,20 @@ const Hero = () => {
           CONSTRUIMOS
           <span className="block text-primary">EL FUTURO</span>
         </h1>
-        <p className="text-cement text-lg md:text-xl font-light max-w-xl mx-auto">
-          Constructora de Gualeguaychú, Entre Ríos — Obras viales, civiles y movimiento de suelos con compromiso y excelencia.
+        <p className="text-cement text-lg md:text-xl font-light max-w-xl mx-auto">Constructora de Gualeguay, Entre Ríos — Obras viales, civiles y movimiento de suelos con compromiso y excelencia.
+
         </p>
       </div>
 
       {/* Scroll indicator */}
       <a
         href="#estudio"
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-scroll-bounce"
-      >
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-scroll-bounce">
+
         <ChevronDown className="text-cement" size={32} />
       </a>
-    </section>
-  );
+    </section>);
+
 };
 
 export default Hero;
