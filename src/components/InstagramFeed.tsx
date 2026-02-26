@@ -1,10 +1,10 @@
 import { Instagram } from "lucide-react";
-import insta1 from "@/assets/insta-1.jpg";
-import insta2 from "@/assets/insta-2.jpg";
-import insta3 from "@/assets/insta-3.jpg";
-import insta4 from "@/assets/insta-4.jpg";
-import insta5 from "@/assets/insta-5.jpg";
-import insta6 from "@/assets/insta-6.jpg";
+import insta1 from "@/assets/project-1.png";
+import insta2 from "@/assets/project-2.png";
+import insta3 from "@/assets/project-3.png";
+import insta4 from "@/assets/project-4.png";
+import insta5 from "@/assets/project-5.png";
+import insta6 from "@/assets/project-6.jpg";
 
 const images = [insta1, insta2, insta3, insta4, insta5, insta6];
 
