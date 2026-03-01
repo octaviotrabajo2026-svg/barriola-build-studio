@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-import project1 from "@/assets/insta-1.jpg";
-import project2 from "@/assets/insta-2.jpg";
-import project3 from "@/assets/insta-3.jpg";
-import project4 from "@/assets/insta-4.jpg";
-import project5 from "@/assets/insta-5.jpg";
-import project6 from "@/assets/insta-6.jpg";
+import project1 from "@/assets/project-1.png";
+import project2 from "@/assets/project-2.png";
+import project3 from "@/assets/project-3.png";
+import project4 from "@/assets/project-4.png";
+import project5 from "@/assets/project-5.png";
+import project6 from "@/assets/project-6.jpg";
 import detail1 from "@/assets/detail-1.png";
 import detail2 from "@/assets/detail-2.png";
 import detail3 from "@/assets/detail-3.png";
