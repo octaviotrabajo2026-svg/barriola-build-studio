@@ -10,11 +10,11 @@ const images = [insta1, insta2, insta3, insta4, insta5, insta6];
 
 const instaPosts = [
   "https://www.instagram.com/p/DSU0JgiiXek/",
-  "https://www.instagram.com/p/DSFXfmsgaB-/",
-  "https://www.instagram.com/p/DR4fbQdDRVH/",
-  "https://www.instagram.com/p/DRzV0OxD34O/",
-  "https://www.instagram.com/p/DRuMRPMiAJA/",
-  "https://www.instagram.com/p/DRhUQfZD2mZ/",
+  "https://www.instagram.com/p/DSFXfmsgaB-/?img_index=1",
+  "https://www.instagram.com/p/DR4fbQdDRVH/?img_index=1",
+  "https://www.instagram.com/p/DRzV0OxD34O/?img_index=1",
+  "https://www.instagram.com/p/DRuMRPMiAJA/?img_index=1",
+  "https://www.instagram.com/p/DRhUQfZD2mZ/?img_index=1",
 ];
 
 const InstagramFeed = () => {

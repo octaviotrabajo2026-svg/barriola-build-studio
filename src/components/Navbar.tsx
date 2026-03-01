@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo-barriola.png";
+import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 const navItems = [
   { label: "Inicio", href: "#inicio" },
@@ -34,7 +35,7 @@ const Navbar = () => {
         </ul>
 
         <a
-          href="https://wa.me/5493444468203"
+          href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="hidden md:inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold tracking-wide hover:brightness-110 transition-all"
@@ -69,7 +70,7 @@ const Navbar = () => {
             ))}
           </ul>
           <a
-            href="https://wa.me/5493444468203"
+            href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold tracking-wide"
