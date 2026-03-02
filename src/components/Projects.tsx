@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-import project1 from "@/assets/project-1.png";
-import project2 from "@/assets/project-2.png";
-import project3 from "@/assets/project-3.png";
-import project4 from "@/assets/project-4.png";
-import project5 from "@/assets/project-5.png";
-import project6 from "@/assets/project-6.jpg";
+const project1 = "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80";
+const project2 = "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80";
+const project3 = "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80";
+const project4 = "https://images.unsplash.com/photo-1590069261209-f8e9b8642343?w=800&q=80";
+const project5 = "https://images.unsplash.com/photo-1581092160607-ee67df30aa53?w=800&q=80";
+const project6 = "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80";
 import detail1 from "@/assets/detail-1.png";
 import detail2 from "@/assets/detail-2.png";
 import detail3 from "@/assets/detail-3.png";
