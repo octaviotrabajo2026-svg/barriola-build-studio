@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [form, setForm] = useState({ nombre: "", email: "", localidad: "", mensaje: "" });
@@ -13,16 +14,34 @@ const Contact = () => {
   return (
     <section id="contacto" className="py-24 bg-background">
       <div className="container mx-auto px-4">
-        <p className="text-primary font-semibold text-sm tracking-widest uppercase mb-3 text-center">
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-primary font-semibold text-sm tracking-widest uppercase mb-3 text-center"
+        >
           Contacto
-        </p>
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-14">
+        </motion.p>
+        <motion.h2
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-3xl md:text-4xl font-bold text-foreground text-center mb-14"
+        >
           Hablemos de tu proyecto
-        </h2>
+        </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <motion.form
+            onSubmit={handleSubmit}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-5"
+          >
             {(["nombre", "email", "localidad"] as const).map((field) => (
               <input
                 key={field}
@@ -48,10 +67,15 @@ const Contact = () => {
             >
               Enviar Consulta
             </button>
-          </form>
+          </motion.form>
 
-          {/* Info */}
-          <div className="space-y-6">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-6"
+          >
             <div className="flex items-start gap-4">
               <MapPin className="text-primary mt-1 shrink-0" size={20} />
               <div>
@@ -85,7 +109,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Map */}
             <div className="mt-6 rounded-lg overflow-hidden border border-border">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3358.8!2d-58.52!3d-33.01!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95ba63c1d0000001%3A0x1!2sAv.+de+la+Soberan%C3%ADa+315%2C+Gualeguay%2C+Entre+R%C3%ADos!5e0!3m2!1ses-419!2sar!4v1700000000000"
@@ -98,7 +121,7 @@ const Contact = () => {
                 title="Ubicación Barriola Constructora"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

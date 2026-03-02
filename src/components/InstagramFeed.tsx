@@ -1,4 +1,5 @@
 import { Instagram } from "lucide-react";
+import { motion } from "framer-motion";
 import insta1 from "@/assets/insta-1.jpg";
 import insta2 from "@/assets/insta-2.jpg";
 import insta3 from "@/assets/insta-3.jpg";
@@ -21,13 +22,25 @@ const InstagramFeed = () => {
   return (
     <section className="py-24 bg-pearl">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-center gap-3 mb-3">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center justify-center gap-3 mb-3"
+        >
           <Instagram className="text-primary" size={24} />
           <p className="text-primary font-semibold text-sm tracking-widest uppercase">
             Instagram
           </p>
-        </div>
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-10">
+        </motion.div>
+        <motion.h2
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-2xl md:text-3xl font-bold text-foreground text-center mb-10"
+        >
           Inspiración en Instagram{" "}
           <a
             href="https://www.instagram.com/barriolaconstructora"
@@ -37,15 +50,19 @@ const InstagramFeed = () => {
           >
             @barriolaconstructora
           </a>
-        </h2>
+        </motion.h2>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {images.map((img, i) => (
-            <a
+            <motion.a
               key={i}
               href={instaPosts[i]}
               target="_blank"
               rel="noopener noreferrer"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
               className="group relative overflow-hidden aspect-square"
             >
               <img
@@ -57,7 +74,7 @@ const InstagramFeed = () => {
               <div className="absolute inset-0 bg-surface-dark/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <Instagram className="text-surface-dark-foreground" size={32} />
               </div>
-            </a>
+            </motion.a>
           ))}
         </div>
       </div>
