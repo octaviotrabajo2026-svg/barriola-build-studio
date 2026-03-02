@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import project1 from "@/assets/project-1.avif";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
@@ -83,16 +84,36 @@ const Projects = () => {
   return (
     <section id="proyectos" className="py-24 bg-background">
       <div className="container mx-auto px-4">
-        <p className="text-primary font-semibold text-sm tracking-widest uppercase mb-3 text-center">
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-primary font-semibold text-sm tracking-widest uppercase mb-3 text-center"
+        >
           Portfolio
-        </p>
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-14">
+        </motion.p>
+        <motion.h2
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-3xl md:text-4xl font-bold text-foreground text-center mb-14"
+        >
           Nuestras Obras
-        </h2>
+        </motion.h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p, i) => (
-            <div key={i} className="group relative overflow-hidden cursor-pointer" onClick={() => openModal(i)}>
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="group relative overflow-hidden cursor-pointer"
+              onClick={() => openModal(i)}
+            >
               <img
                 src={p.img}
                 alt={p.title}
@@ -106,73 +127,82 @@ const Projects = () => {
                   Ver detalles
                 </span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
 
       {/* Modal */}
-      {project && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-surface-dark/80 backdrop-blur-sm" onClick={closeModal}>
-          <div
-            className="relative bg-background border border-border max-w-3xl w-full max-h-[90vh] overflow-y-auto"
-            onClick={(e) => e.stopPropagation()}
+      <AnimatePresence>
+        {project && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-surface-dark/80 backdrop-blur-sm"
+            onClick={closeModal}
           >
-            {/* Close */}
-            <button
-              onClick={closeModal}
-              className="absolute top-4 right-4 z-10 bg-surface-dark/70 text-surface-dark-foreground p-2 hover:bg-primary hover:text-primary-foreground transition-colors"
-              aria-label="Cerrar"
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.25 }}
+              className="relative bg-background border border-border max-w-3xl w-full max-h-[90vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
             >
-              <X size={20} />
-            </button>
+              <button
+                onClick={closeModal}
+                className="absolute top-4 right-4 z-10 bg-surface-dark/70 text-surface-dark-foreground p-2 hover:bg-primary hover:text-primary-foreground transition-colors"
+                aria-label="Cerrar"
+              >
+                <X size={20} />
+              </button>
 
-            {/* Gallery slider */}
-            <div className="relative">
-              <img
-                src={project.gallery[slideIndex]}
-                alt={`${project.title} - ${slideIndex + 1}`}
-                className="w-full aspect-video object-cover"
-              />
-              {project.gallery.length > 1 && (
-                <>
-                  <button
-                    onClick={() => setSlideIndex((slideIndex - 1 + project.gallery.length) % project.gallery.length)}
-                    className="absolute left-3 top-1/2 -translate-y-1/2 bg-surface-dark/70 text-surface-dark-foreground p-2 hover:bg-primary hover:text-primary-foreground transition-colors"
-                    aria-label="Anterior"
-                  >
-                    <ChevronLeft size={20} />
-                  </button>
-                  <button
-                    onClick={() => setSlideIndex((slideIndex + 1) % project.gallery.length)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 bg-surface-dark/70 text-surface-dark-foreground p-2 hover:bg-primary hover:text-primary-foreground transition-colors"
-                    aria-label="Siguiente"
-                  >
-                    <ChevronRight size={20} />
-                  </button>
-                  {/* Dots */}
-                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-                    {project.gallery.map((_, di) => (
-                      <button
-                        key={di}
-                        onClick={() => setSlideIndex(di)}
-                        className={`w-2.5 h-2.5 rounded-full transition-colors ${di === slideIndex ? "bg-primary" : "bg-surface-dark-foreground/50"}`}
-                      />
-                    ))}
-                  </div>
-                </>
-              )}
-            </div>
+              <div className="relative">
+                <img
+                  src={project.gallery[slideIndex]}
+                  alt={`${project.title} - ${slideIndex + 1}`}
+                  className="w-full aspect-video object-cover"
+                />
+                {project.gallery.length > 1 && (
+                  <>
+                    <button
+                      onClick={() => setSlideIndex((slideIndex - 1 + project.gallery.length) % project.gallery.length)}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 bg-surface-dark/70 text-surface-dark-foreground p-2 hover:bg-primary hover:text-primary-foreground transition-colors"
+                      aria-label="Anterior"
+                    >
+                      <ChevronLeft size={20} />
+                    </button>
+                    <button
+                      onClick={() => setSlideIndex((slideIndex + 1) % project.gallery.length)}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 bg-surface-dark/70 text-surface-dark-foreground p-2 hover:bg-primary hover:text-primary-foreground transition-colors"
+                      aria-label="Siguiente"
+                    >
+                      <ChevronRight size={20} />
+                    </button>
+                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                      {project.gallery.map((_, di) => (
+                        <button
+                          key={di}
+                          onClick={() => setSlideIndex(di)}
+                          className={`w-2.5 h-2.5 rounded-full transition-colors ${di === slideIndex ? "bg-primary" : "bg-surface-dark-foreground/50"}`}
+                        />
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
 
-            {/* Content */}
-            <div className="p-6 md:p-8">
-              <h3 className="text-2xl font-bold text-foreground mb-1">{project.title}</h3>
-              <p className="text-primary text-sm font-semibold tracking-wide uppercase mb-4">{project.location}</p>
-              <p className="text-muted-foreground leading-relaxed">{project.description}</p>
-            </div>
-          </div>
-        </div>
-      )}
+              <div className="p-6 md:p-8">
+                <h3 className="text-2xl font-bold text-foreground mb-1">{project.title}</h3>
+                <p className="text-primary text-sm font-semibold tracking-wide uppercase mb-4">{project.location}</p>
+                <p className="text-muted-foreground leading-relaxed">{project.description}</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

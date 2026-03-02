@@ -1,10 +1,10 @@
 import { ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.png";
 
 const Hero = () => {
   return (
     <section id="inicio" className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image - B&W with dark overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -14,26 +14,44 @@ const Hero = () => {
 
       <div className="absolute inset-0 bg-surface-dark/80" />
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 animate-fade-in-up">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative z-10 text-center px-4"
+      >
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-surface-dark-foreground mb-4">
           CONSTRUIMOS
-          <span className="block text-primary">EL FUTURO</span>
+          <motion.span
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="block text-primary"
+          >
+            EL FUTURO
+          </motion.span>
         </h1>
-        <p className="text-cement text-lg md:text-xl font-light max-w-xl mx-auto">Constructora de Gualeguay, Entre Ríos — Obras viales, civiles y movimiento de suelos con compromiso y excelencia.
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.7 }}
+          className="text-cement text-lg md:text-xl font-light max-w-xl mx-auto"
+        >
+          Constructora de Gualeguay, Entre Ríos — Obras viales, civiles y movimiento de suelos con compromiso y excelencia.
+        </motion.p>
+      </motion.div>
 
-        </p>
-      </div>
-
-      {/* Scroll indicator */}
-      <a
+      <motion.a
         href="#estudio"
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-scroll-bounce">
-
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.5 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-scroll-bounce"
+      >
         <ChevronDown className="text-cement" size={32} />
-      </a>
-    </section>);
-
+      </motion.a>
+    </section>
+  );
 };
 
 export default Hero;
