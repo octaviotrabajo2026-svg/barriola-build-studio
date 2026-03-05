@@ -1,14 +1,48 @@
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Loader2, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import { toast } from "sonner";
 
 const Contact = () => {
   const [form, setForm] = useState({ nombre: "", email: "", localidad: "", mensaje: "" });
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `Hola, soy ${form.nombre} de ${form.localidad}. ${form.mensaje}`;
-    window.open(`https://wa.me/5493444468203?text=${encodeURIComponent(text)}`, "_blank");
+
+    // Validate inputs
+    if (!form.nombre.trim() || !form.email.trim() || !form.mensaje.trim()) {
+      toast.error("Por favor completá todos los campos obligatorios.");
+      return;
+    }
+
+    setSending(true);
+
+    try {
+      const res = await fetch("https://formspree.io/f/xwpkgjvr", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.nombre,
+          email: form.email,
+          localidad: form.localidad,
+          message: form.mensaje,
+        }),
+      });
+
+      if (res.ok) {
+        setSent(true);
+        setForm({ nombre: "", email: "", localidad: "", mensaje: "" });
+        toast.success("¡Mensaje enviado con éxito!");
+      } else {
+        throw new Error("Error en el envío");
+      }
+    } catch {
+      toast.error("Hubo un error al enviar. Intentá de nuevo.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -47,7 +81,7 @@ const Contact = () => {
                 key={field}
                 type={field === "email" ? "email" : "text"}
                 placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
-                required
+                required={field !== "localidad"}
                 value={form[field]}
                 onChange={(e) => setForm({ ...form, [field]: e.target.value })}
                 className="w-full border border-border bg-pearl px-4 py-3 text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:border-primary transition-colors"
@@ -63,9 +97,12 @@ const Contact = () => {
             />
             <button
               type="submit"
-              className="bg-primary text-primary-foreground px-8 py-3 font-semibold text-sm tracking-widest uppercase hover:brightness-110 transition-all w-full md:w-auto"
+              disabled={sending || sent}
+              className="bg-primary text-primary-foreground px-8 py-3 font-semibold text-sm tracking-widest uppercase hover:brightness-110 transition-all w-full md:w-auto disabled:opacity-60 flex items-center justify-center gap-2"
             >
-              Enviar Consulta
+              {sending && <Loader2 className="animate-spin" size={16} />}
+              {sent && <CheckCircle size={16} />}
+              {sent ? "Enviado" : sending ? "Enviando..." : "Enviar Consulta"}
             </button>
           </motion.form>
 
