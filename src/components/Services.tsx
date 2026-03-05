@@ -9,7 +9,7 @@ const services = [
       "Excavaciones, rellenos, compactación y nivelación de terrenos con maquinaria pesada de última generación.",
   },
   {
-    icon: Road,
+    icon: Route,
     title: "Obras Viales",
     description:
       "Construcción y mantenimiento de caminos, cordones cuneta, badenes y pavimentación urbana y rural.",
