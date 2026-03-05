@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Shovel, Road, Mountain, Droplets, Truck, Home } from "lucide-react";
+import { Shovel, Route, Mountain, Droplets, Truck, Home } from "lucide-react";
 
 const services = [
   {
