@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const stats = [
   { value: 150, suffix: "+", label: "Proyectos entregados" },
   { value: 45000, suffix: " m²", label: "Metros cuadrados construidos" },
-  { value: 120, suffix: "+", label: "Clientes satisfechos" },
+  { value: 100, suffix: "%", label: "Clientes satisfechos" },
 ];
 
 function useCountUp(target: number, duration = 2000, start = false) {
