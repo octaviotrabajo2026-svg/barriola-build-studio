@@ -148,7 +148,7 @@ const Contact = () => {
 
             <div className="mt-6 rounded-lg overflow-hidden border border-border">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3358.8!2d-58.52!3d-33.01!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95ba63c1d0000001%3A0x1!2sAv.+de+la+Soberan%C3%ADa+315%2C+Gualeguay%2C+Entre+R%C3%ADos!5e0!3m2!1ses-419!2sar!4v1700000000000"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3358.8!2d-59.3153313!3d-33.1324954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa0aafecd1e7035cb%3A0xa4c90447ac4f5bb1!2sBarriola+Constructora!5e0!3m2!1ses!2sar!4v1700000000000"
                 width="100%"
                 height="250"
                 style={{ border: 0 }}
@@ -157,6 +157,14 @@ const Contact = () => {
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Ubicación Barriola Constructora"
               />
+              <a
+                href="https://www.google.com/maps/place/Barriola+Constructora/@-33.1324954,-59.3153313,17z/data=!3m1!4b1!4m6!3m5!1s0xa0aafecd1e7035cb:0xa4c90447ac4f5bb1!8m2!3d-33.1324999!4d-59.3127564!16s%2Fg%2F11p0nmnc74?hl=es&entry=ttu&g_ep=EgoyMDI2MDMwMi4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-surface-dark text-surface-dark-foreground py-2.5 text-sm font-semibold tracking-wide hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
+                Abrir en Google Maps
+              </a>
             </div>
           </motion.div>
         </div>

@@ -1,29 +1,34 @@
 
 
-## Plan: 4 modificaciones solicitadas
+## Plan: Reemplazar imagenes de portafolio por fotos reales
 
-### 1. Mapa — link "Abrir en Maps"
-Debajo del iframe del mapa en `Contact.tsx`, agregar un link/botón "Abrir en Google Maps" que apunte a la URL exacta proporcionada:
-`https://www.google.com/maps/place/Barriola+Constructora/...`
+### Objetivo
+Reemplazar las 6 imagenes principales de la seccion de portafolio (project-1 a project-6) por fotos reales de construccion obtenidas de Unsplash (licencia libre, uso gratuito).
 
-### 2. Navbar — agregar "Servicios"
-En `Navbar.tsx`, agregar `{ label: "Servicios", href: "#servicios" }` al array `navItems` entre "Estudio" y "Proyectos".
+### Enfoque
+En lugar de importar archivos locales para las imagenes principales, usaremos URLs directas de Unsplash con el parametro de optimizacion de tamanio. Las imagenes de detalle (detail-1 a detail-5) se mantienen como estan.
 
-### 3. Servicios con modal de detalles (como Proyectos)
-Refactorizar `Services.tsx` para que cada servicio tenga:
-- Una imagen placeholder (se pueden subir después)
-- Un botón "Ver detalles" con hover overlay (igual que en Projects)
-- Un modal con galería de imágenes, descripción extendida y navegación entre fotos
-- Se reutiliza el mismo patrón de modal/galería de `Projects.tsx`
+### Cambios en `src/components/Projects.tsx`
 
-Cada servicio tendrá campos: `img`, `title`, `description`, `gallery[]`, `fullDescription`.
+1. **Eliminar imports de project-1 a project-6** (lineas 3-8)
+2. **Crear constantes con URLs de Unsplash** para cada proyecto, seleccionando fotos reales que coincidan con la tematica:
+   - Proyecto 1 (Hormigonado): foto real de vertido de hormigon
+   - Proyecto 2 (Construccion de Muros): foto real de muros de contencion
+   - Proyecto 3 (Cordones Cuneta): foto real de obra vial urbana
+   - Proyecto 4 (Camino al Rio): foto real de infraestructura costera/ribereña
+   - Proyecto 5 (Excavacion Profunda): foto real de excavadora en obra
+   - Proyecto 6 (Obra Residencial): foto real de construccion residencial
 
-### 4. Stats — cambiar "120+ Clientes satisfechos" por "100%"
-En `Stats.tsx`, cambiar el tercer stat de `{ value: 120, suffix: "+", label: "Clientes satisfechos" }` a `{ value: 100, suffix: "%", label: "Clientes satisfechos" }`.
+3. **Actualizar el array `projects`** para usar las URLs en `img` y como primer elemento de `gallery`
 
-### Archivos a modificar
-- `src/components/Contact.tsx` — agregar link al mapa
-- `src/components/Navbar.tsx` — agregar item "Servicios"
-- `src/components/Services.tsx` — rediseño completo con cards + modal
-- `src/components/Stats.tsx` — cambiar valor del counter
+### URLs de Unsplash seleccionadas
+Se usaran URLs con formato `https://images.unsplash.com/photo-XXXXX?w=800&q=80` para optimizar la carga (800px de ancho, calidad 80%).
+
+### Archivos modificados
+- `src/components/Projects.tsx` - unico archivo a modificar
+
+### Notas
+- Las imagenes de detalle (detail-1 a detail-5) no se tocan
+- El modal, la galeria y toda la funcionalidad existente se mantienen intactos
+- Unsplash permite uso gratuito sin atribucion para proyectos comerciales
 
