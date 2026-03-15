@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo-barriola.png";
+import logo from "@/assets/logo-barriola-new.png";
 import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 const navItems = [
