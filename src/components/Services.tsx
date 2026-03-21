@@ -105,7 +105,7 @@ const Services = () => {
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group relative overflow-hidden cursor-pointer border border-border bg-pearl"
-              onClick={() => openModal(i)}
+              onClick={() => s.title && openModal(i)}
             >
               {/* Image placeholder */}
               <div className="relative aspect-[4/3] bg-surface-dark flex items-center justify-center overflow-hidden">
