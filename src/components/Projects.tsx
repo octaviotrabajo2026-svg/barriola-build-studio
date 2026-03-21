@@ -40,8 +40,8 @@ const projects = [
   },
   {
     img: project4,
-    title: "Camino al Río",
-    location: "Estructura con Propósito",
+    title: "Red Cloacal Zona Norte",
+    location: "Zona Norte",
     gallery: [project4, detail4],
     description:
       "Obra de infraestructura para acceso al río. Incluye movimiento de suelos, construcción de muros de contención y nivelación del terreno para generar un acceso seguro y funcional en zona costera.",
