@@ -24,8 +24,8 @@ const projects = [
   },
   {
     img: project2,
-    title: "Construcción de Muros",
-    location: "Muros Laterales",
+    title: "Parque Industrial Gualeguay",
+    location: "Gualeguay",
     gallery: [project2, detail2],
     description:
       "Construcción de muros laterales de contención con maquinaria pesada. El proyecto incluyó excavación, compactación del terreno y levantamiento de muros de hormigón armado para estabilización del suelo en zona ribereña.",
