@@ -16,8 +16,8 @@ import detail5 from "@/assets/detail-5.png";
 const projects = [
   {
     img: project1,
-    title: "Hormigonado",
-    location: "Refuerzo Estructural",
+    title: "Feed-Lot - Las Flores",
+    location: "Las Flores",
     gallery: [project1, detail1],
     description:
       "Trabajo de hormigonado para refuerzo estructural en obra civil. Se realizaron tareas de encofrado, armado de hierro y vertido de hormigón elaborado, garantizando la resistencia y durabilidad requeridas por el proyecto. Control de calidad en cada etapa del proceso.",
