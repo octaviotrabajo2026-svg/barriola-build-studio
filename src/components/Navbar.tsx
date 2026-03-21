@@ -5,7 +5,7 @@ import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 const navItems = [
   { label: "Inicio", href: "#inicio" },
-  { label: "Estudio", href: "#estudio" },
+  { label: "Nosotros", href: "#estudio" },
   { label: "Servicios", href: "#servicios" },
   { label: "Proyectos", href: "#proyectos" },
   { label: "Contacto", href: "#contacto" },

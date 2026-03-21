@@ -16,48 +16,48 @@ import detail5 from "@/assets/detail-5.png";
 const projects = [
   {
     img: project1,
-    title: "Hormigonado",
-    location: "Refuerzo Estructural",
+    title: "Feed-Lot - Las Flores",
+    location: "Las Flores",
     gallery: [project1, detail1],
     description:
       "Trabajo de hormigonado para refuerzo estructural en obra civil. Se realizaron tareas de encofrado, armado de hierro y vertido de hormigón elaborado, garantizando la resistencia y durabilidad requeridas por el proyecto. Control de calidad en cada etapa del proceso.",
   },
   {
     img: project2,
-    title: "Construcción de Muros",
-    location: "Muros Laterales",
+    title: "Parque Industrial Gualeguay",
+    location: "Gualeguay",
     gallery: [project2, detail2],
     description:
       "Construcción de muros laterales de contención con maquinaria pesada. El proyecto incluyó excavación, compactación del terreno y levantamiento de muros de hormigón armado para estabilización del suelo en zona ribereña.",
   },
   {
     img: project3,
-    title: "Cordones Cuneta",
-    location: "Obra Vial Urbana",
+    title: "Plan Habitat Gualeguay",
+    location: "Gualeguay",
     gallery: [project3, detail3],
     description:
       "Ejecución de cordones cuneta en obra vial urbana. Trabajo de precisión en el trazado y nivelación para garantizar el correcto escurrimiento de aguas pluviales y la integración con el pavimento existente.",
   },
   {
     img: project4,
-    title: "Camino al Río",
-    location: "Estructura con Propósito",
+    title: "Red Cloacal Zona Norte",
+    location: "Zona Norte",
     gallery: [project4, detail4],
     description:
       "Obra de infraestructura para acceso al río. Incluye movimiento de suelos, construcción de muros de contención y nivelación del terreno para generar un acceso seguro y funcional en zona costera.",
   },
   {
     img: project5,
-    title: "Excavación Profunda",
-    location: "Control y Precisión",
+    title: "Pavimentos Intertrabados",
+    location: "Gualeguay",
     gallery: [project5, detail5],
     description:
       "Excavación profunda controlada con retroexcavadora para obras de gran envergadura. Trabajos realizados con máximo control de seguridad y precisión en terrenos complejos junto al río.",
   },
   {
     img: project6,
-    title: "Obra Residencial",
-    location: "Gualeguaychú, E.R.",
+    title: "Pavimento de Hº 50 cuadras",
+    location: "Gualeguay",
     gallery: [project6],
     description:
       "Desarrollo de obra residencial integral en Gualeguaychú, Entre Ríos. Proyecto que abarca desde los cimientos hasta la terminación, con enfoque en calidad constructiva y cumplimiento de plazos.",
