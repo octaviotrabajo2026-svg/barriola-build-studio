@@ -56,8 +56,8 @@ const projects = [
   },
   {
     img: project6,
-    title: "Obra Residencial",
-    location: "Gualeguaychú, E.R.",
+    title: "Pavimento de Hº 50 cuadras",
+    location: "Gualeguay",
     gallery: [project6],
     description:
       "Desarrollo de obra residencial integral en Gualeguaychú, Entre Ríos. Proyecto que abarca desde los cimientos hasta la terminación, con enfoque en calidad constructiva y cumplimiento de plazos.",

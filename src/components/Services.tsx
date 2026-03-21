@@ -181,7 +181,6 @@ const Services = () => {
                   />
                 ) : (
                   <div className="w-full aspect-video bg-surface-dark flex flex-col items-center justify-center gap-3">
-                    <service.icon size={64} className="text-primary/40" />
                     <span className="text-muted-foreground text-sm tracking-widest uppercase">Imagen próximamente</span>
                   </div>
                 )}
