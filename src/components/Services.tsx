@@ -118,26 +118,21 @@ const Services = () => {
                   />
                 ) : (
                   <div className="flex flex-col items-center gap-3 text-muted-foreground">
-                    <s.icon size={48} className="text-primary/40" />
-                    <span className="text-xs tracking-widest uppercase">Imagen próximamente</span>
+                    <span className="text-xs tracking-widest uppercase">{s.title ? "Imagen próximamente" : ""}</span>
                   </div>
                 )}
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-surface-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
-                  <span className="border border-primary text-primary px-4 py-2 text-xs font-semibold tracking-widest uppercase hover:bg-primary hover:text-primary-foreground transition-colors">
-                    Ver detalles
-                  </span>
-                </div>
+                {s.title && (
+                  <div className="absolute inset-0 bg-surface-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
+                    <span className="border border-primary text-primary px-4 py-2 text-xs font-semibold tracking-widest uppercase hover:bg-primary hover:text-primary-foreground transition-colors">
+                      Ver detalles
+                    </span>
+                  </div>
+                )}
               </div>
 
               {/* Card content */}
               <div className="p-6">
-                <div className="w-10 h-10 bg-surface-dark flex items-center justify-center mb-4 group-hover:bg-primary transition-colors duration-300">
-                  <s.icon
-                    className="text-primary group-hover:text-primary-foreground transition-colors duration-300"
-                    size={20}
-                  />
-                </div>
                 <h3 className="text-lg font-bold text-foreground mb-2">
                   {s.title}
                 </h3>
