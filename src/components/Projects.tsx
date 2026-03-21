@@ -32,8 +32,8 @@ const projects = [
   },
   {
     img: project3,
-    title: "Cordones Cuneta",
-    location: "Obra Vial Urbana",
+    title: "Plan Habitat Gualeguay",
+    location: "Gualeguay",
     gallery: [project3, detail3],
     description:
       "Ejecución de cordones cuneta en obra vial urbana. Trabajo de precisión en el trazado y nivelación para garantizar el correcto escurrimiento de aguas pluviales y la integración con el pavimento existente.",
