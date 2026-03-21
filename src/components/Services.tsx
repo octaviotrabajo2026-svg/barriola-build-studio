@@ -1,21 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronLeft, ChevronRight, Shovel, Route, Mountain, Droplets, Truck, Home } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const services = [
   {
-    icon: Shovel,
-    title: "Movimiento de Suelos",
-    subtitle: "Excavación y Nivelación",
-    description:
-      "Excavaciones, rellenos, compactación y nivelación de terrenos con maquinaria pesada de última generación.",
-    fullDescription:
-      "Realizamos todo tipo de movimiento de suelos con maquinaria de última generación. Nuestros servicios incluyen excavaciones, rellenos, compactación y nivelación de terrenos para proyectos residenciales, comerciales e industriales. Contamos con operadores altamente capacitados y equipos modernos que garantizan precisión y eficiencia en cada proyecto.",
-    gallery: ["/placeholder.svg"],
-  },
-  {
-    icon: Route,
-    title: "Obras Viales",
+    title: "Vial",
     subtitle: "Infraestructura Vial",
     description:
       "Construcción y mantenimiento de caminos, cordones cuneta, badenes y pavimentación urbana y rural.",
@@ -24,43 +13,46 @@ const services = [
     gallery: ["/placeholder.svg"],
   },
   {
-    icon: Mountain,
-    title: "Nivelación de Terrenos",
-    subtitle: "Preparación de Suelos",
-    description:
-      "Limpieza, desmonte y preparación de terrenos para uso agrícola, industrial o residencial.",
-    fullDescription:
-      "Ofrecemos servicios integrales de nivelación de terrenos que incluyen limpieza, desmonte y preparación para diversos usos: agrícola, industrial o residencial. Utilizamos tecnología de punta para lograr la nivelación precisa que cada proyecto requiere, optimizando el drenaje y la utilización del suelo.",
-    gallery: ["/placeholder.svg"],
-  },
-  {
-    icon: Droplets,
-    title: "Alcantarillas",
-    subtitle: "Obras Hidráulicas",
-    description:
-      "Venta, transporte y colocación de alcantarillas de hormigón para obras hidráulicas y viales.",
-    fullDescription:
-      "Proveemos soluciones completas en alcantarillas de hormigón: venta, transporte y colocación profesional. Nuestras alcantarillas cumplen con todas las normativas vigentes y son ideales para obras hidráulicas, viales y de drenaje. Garantizamos una instalación correcta que asegura la durabilidad y funcionalidad de la obra.",
-    gallery: ["/placeholder.svg"],
-  },
-  {
-    icon: Truck,
-    title: "Venta de Suelos y Áridos",
-    subtitle: "Materiales de Construcción",
-    description:
-      "Provisión de tosca, arena, piedra y otros materiales con entrega en obra en toda la región.",
-    fullDescription:
-      "Comercializamos una amplia variedad de suelos y áridos: tosca, arena, piedra, ripio y otros materiales esenciales para la construcción. Contamos con flota propia de transporte para garantizar la entrega puntual en obra en toda la región. Materiales de primera calidad con certificación de origen.",
-    gallery: ["/placeholder.svg"],
-  },
-  {
-    icon: Home,
-    title: "Sistematización del Campo",
+    title: "Agropecuario",
     subtitle: "Ingeniería Agropecuaria",
     description:
       "Diseño y ejecución de sistematización de campos para optimizar el drenaje y la producción agropecuaria.",
     fullDescription:
       "Diseñamos y ejecutamos proyectos de sistematización de campos para optimizar el drenaje, prevenir inundaciones y maximizar la producción agropecuaria. Nuestro equipo de ingeniería trabaja con relevamientos topográficos precisos para desarrollar soluciones a medida que mejoran la productividad de cada campo.",
+    gallery: ["/placeholder.svg"],
+  },
+  {
+    title: "Industrial",
+    subtitle: "Obras Industriales",
+    description:
+      "Desarrollo de infraestructura para parques industriales, plantas y establecimientos productivos.",
+    fullDescription:
+      "Realizamos obras de infraestructura industrial incluyendo movimiento de suelos, nivelación, pavimentación y construcción de accesos para parques industriales y establecimientos productivos. Garantizamos calidad y cumplimiento de plazos en cada proyecto.",
+    gallery: ["/placeholder.svg"],
+  },
+  {
+    title: "Ganadero",
+    subtitle: "Infraestructura Ganadera",
+    description:
+      "Construcción de feed-lots, corrales, accesos y sistematización de campos para actividad ganadera.",
+    fullDescription:
+      "Ejecutamos proyectos de infraestructura ganadera que incluyen construcción de feed-lots, corrales, accesos, aguadas y sistematización de campos orientada a optimizar la actividad ganadera. Trabajamos con criterio técnico para maximizar la productividad del establecimiento.",
+    gallery: ["/placeholder.svg"],
+  },
+  {
+    title: "Hidráulico",
+    subtitle: "Obras Hidráulicas",
+    description:
+      "Venta, transporte y colocación de alcantarillas de hormigón para obras hidráulicas y viales.",
+    fullDescription:
+      "Proveemos soluciones completas en obras hidráulicas: alcantarillas, canales, desagües y sistemas de drenaje. Nuestras obras cumplen con todas las normativas vigentes y garantizamos una ejecución correcta que asegura durabilidad y funcionalidad.",
+    gallery: ["/placeholder.svg"],
+  },
+  {
+    title: "",
+    subtitle: "",
+    description: "",
+    fullDescription: "",
     gallery: ["/placeholder.svg"],
   },
 ];
