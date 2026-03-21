@@ -48,8 +48,8 @@ const projects = [
   },
   {
     img: project5,
-    title: "Excavación Profunda",
-    location: "Control y Precisión",
+    title: "Pavimentos Intertrabados",
+    location: "Gualeguay",
     gallery: [project5, detail5],
     description:
       "Excavación profunda controlada con retroexcavadora para obras de gran envergadura. Trabajos realizados con máximo control de seguridad y precisión en terrenos complejos junto al río.",
